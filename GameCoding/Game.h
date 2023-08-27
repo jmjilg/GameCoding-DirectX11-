@@ -27,7 +27,10 @@ private:
 	void CreateVS();
 	void CreatePS();
 
+
 	void CreateSRV();
+
+	void CreateConstantBuffer();
 
 	void LoadShaderFromFile(const wstring& path, const string& name, const string& version, ComPtr<ID3DBlob>& blob);
 
@@ -63,6 +66,9 @@ private:
 	ComPtr<ID3D11VertexShader> _vertexShader = nullptr;
 	ComPtr<ID3DBlob> _vsBlob = nullptr;
 
+	// RS
+
+
 	// PS
 	ComPtr<ID3D11PixelShader> _pixelShader = nullptr;
 	ComPtr<ID3DBlob> _psBlob = nullptr;
@@ -73,6 +79,9 @@ private:
 
 
 	// [CPU<->RAM] [GPU<->VRAM]
-
+private:
+	// SRT
+	TransformData _transformData;
+	ComPtr<ID3D11Buffer> _constantBuffer;
 };
 

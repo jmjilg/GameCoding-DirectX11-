@@ -8,3 +8,9 @@ struct Vertex
 	Vec2 uv;
 };
 
+struct TransformData
+{
+	Vec3 offset;
+	float dummy;
+};
+
