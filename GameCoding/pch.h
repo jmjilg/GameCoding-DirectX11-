@@ -6,7 +6,9 @@
 #include "Values.h"
 #include "Struct.h"
 
-// STL
+// STL 
+#include <memory>
+#include <iostream>
 #include <vector>
 #include <list>
 #include <map>
@@ -44,3 +46,6 @@ using namespace Microsoft::WRL;
 #include "VertexBuffer.h"
 #include "IndexBuffer.h"
 #include "InputLayout.h"
+#include "Geometry.h"
+#include "GeometryHelper.h"
+#include "VertexData.h"
