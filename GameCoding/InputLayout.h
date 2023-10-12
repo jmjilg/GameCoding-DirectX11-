@@ -1,6 +1,6 @@
 #pragma once
 
- class InputLayout
+class InputLayout
 {
 public:
 	InputLayout(ComPtr<ID3D11Device> device);

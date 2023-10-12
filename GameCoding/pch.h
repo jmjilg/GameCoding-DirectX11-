@@ -1,24 +1,24 @@
 #pragma once
 
-#define _XM_NO_INTRINSICES_
+#define _XM_NO_INTRINSICS_
 
 #include "Types.h"
 #include "Values.h"
 #include "Struct.h"
 
-// STL 
+// STL
 #include <memory>
 #include <iostream>
 #include <vector>
 #include <list>
 #include <map>
 #include <unordered_map>
-#include <string>
 using namespace std;
 
 // WIN
-#include <Windows.h>
+#include <windows.h>
 #include <assert.h>
+
 
 // DX
 #include <d3d11.h>

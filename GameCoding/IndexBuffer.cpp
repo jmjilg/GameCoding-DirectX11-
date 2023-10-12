@@ -9,6 +9,7 @@ IndexBuffer::IndexBuffer(ComPtr<ID3D11Device> device)
 
 IndexBuffer::~IndexBuffer()
 {
+
 }
 
 void IndexBuffer::Create(const vector<uint32>& indices)

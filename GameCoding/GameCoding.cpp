@@ -6,7 +6,7 @@
 #define MAX_LOADSTRING 100
 
 // 전역 변수:
-HINSTANCE hInst;                                // 현재 인스턴스입니다.
+HINSTANCE hInst;
 HWND hWnd;
 
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
@@ -19,7 +19,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
                      _In_ LPWSTR    lpCmdLine,
                      _In_ int       nCmdShow)
 {
-
     // 1) 윈도우 창 정보 등록
     MyRegisterClass(hInstance);
 
@@ -37,15 +36,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     {
         if (::PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
         {
-            TranslateMessage(&msg);
-            DispatchMessage(&msg);
+			TranslateMessage(&msg);
+			DispatchMessage(&msg);
         }
         else
         {
             game.Update();
             game.Render();
         }
-
     }
 
     return (int) msg.wParam;
@@ -93,8 +91,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
 
-   RECT windowRect = { 0, 0, GWinSizeX, GWinSizeY };
-   ::AdjustWindowRect(&windowRect, WS_OVERLAPPED, false);
+   RECT windowRect = {0, 0, GWinSizeX, GWinSizeY};
+   ::AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, false);
 
    hWnd = CreateWindowW(L"GameCoding", L"Client", WS_OVERLAPPEDWINDOW,
       CW_USEDEFAULT, 0, windowRect.right - windowRect.left, windowRect.bottom - windowRect.top, nullptr, nullptr, hInstance, nullptr);

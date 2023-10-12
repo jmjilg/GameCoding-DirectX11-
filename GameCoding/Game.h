@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Graphics.h"
 
 class Game
 {
@@ -11,6 +12,8 @@ public:
 	void Init(HWND hwnd);
 	void Update();
 	void Render();
+
+private:
 
 private:
 	void CreateGeometry();
@@ -27,7 +30,6 @@ private:
 
 	void LoadShaderFromFile(const wstring& path, const string& name, const string& version, ComPtr<ID3DBlob>& blob);
 
-
 private:
 	HWND _hwnd;
 
@@ -35,15 +37,10 @@ private:
 
 private:
 	// Geometry
-	//vector<Vertex> _vertices;
-	//vector<uint32> _indices;
-
 	shared_ptr<Geometry<VertexTextureData>> _geometry;
-
-	shared_ptr<VertexBuffer> _vertexBuffer; 
+	shared_ptr<VertexBuffer> _vertexBuffer;
 	shared_ptr<IndexBuffer> _indexBuffer;
 	shared_ptr<InputLayout> _inputLayout;
-
 
 	// VS
 	ComPtr<ID3D11VertexShader> _vertexShader = nullptr;
@@ -57,19 +54,19 @@ private:
 	ComPtr<ID3DBlob> _psBlob = nullptr;
 
 	// SRV
-	ComPtr<ID3D11ShaderResourceView> _shaderResourceView = nullptr;
-	ComPtr<ID3D11ShaderResourceView> _shaderResourceView2 = nullptr;
+	ComPtr<ID3D11ShaderResourceView> _shaderResourveView = nullptr;
+	ComPtr<ID3D11ShaderResourceView> _shaderResourveView2 = nullptr;
 
 	ComPtr<ID3D11SamplerState> _samplerState = nullptr;
 	ComPtr<ID3D11BlendState> _blendState = nullptr;
-	// [CPU<->RAM] [GPU<->VRAM]
+	// [ CPU<->RAM ] [GPU<->VRAM]
 private:
 	// SRT
 	TransformData _transformData;
 	ComPtr<ID3D11Buffer> _constantBuffer;
 
-	Vec3 _localPosition = { 0.f, 0.f, 0.f };
-	Vec3 _localRotation = { 0.f, 0.f, 0.f };
-	Vec3 _localScale = { 1.f, 1.f, 1.f };
+	Vec3 _localPosition = {0.f, 0.f, 0.f};
+	Vec3 _localRotation = {0.f, 0.f, 0.f};
+	Vec3 _localScale = {1.f, 1.f, 1.f};
 };
 

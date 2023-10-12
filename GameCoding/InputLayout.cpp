@@ -4,11 +4,14 @@
 InputLayout::InputLayout(ComPtr<ID3D11Device> device)
 	: _device(device)
 {
+
 }
 
 InputLayout::~InputLayout()
 {
+
 }
+
 
 void InputLayout::Create(const vector<D3D11_INPUT_ELEMENT_DESC>& descs, ComPtr<ID3DBlob> blob)
 {

@@ -39,4 +39,3 @@ private:
 	uint32 _offset = 0;
 	uint32 _count = 0;
 };
-

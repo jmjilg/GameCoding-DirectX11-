@@ -3,10 +3,12 @@
 
 Game::Game()
 {
+
 }
 
 Game::~Game()
 {
+
 }
 
 void Game::Init(HWND hwnd)
@@ -30,14 +32,14 @@ void Game::Init(HWND hwnd)
 
 	CreateSRV();
 	CreateConstantBuffer();
-	}
+}
 
 void Game::Update()
 {
 	// Scale Rotation Translation
 
 	_localPosition.x += 0.001f;
-	
+
 	Matrix matScale = Matrix::CreateScale(_localScale / 3);
 	Matrix matRotation = Matrix::CreateRotationX(_localRotation.x);
 	matRotation *= Matrix::CreateRotationY(_localRotation.y);
@@ -46,10 +48,9 @@ void Game::Update()
 
 	Matrix matWorld = matScale * matRotation * matTranslation; // SRT
 	_transformData.matWorld = matWorld;
-	
+
 	D3D11_MAPPED_SUBRESOURCE subResource;
 	ZeroMemory(&subResource, sizeof(subResource));
-
 	
 	_graphics->GetDeviceContext()->Map(_constantBuffer.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &subResource);
 	::memcpy(subResource.pData, &_transformData, sizeof(_transformData));
@@ -59,15 +60,15 @@ void Game::Update()
 void Game::Render()
 {
 	_graphics->RenderBegin();
-	
+
 	{
 		uint32 stride = sizeof(VertexTextureData);
 		uint32 offset = 0;
 
 		auto _deviceContext = _graphics->GetDeviceContext();
-
+		
 		// IA
-		_deviceContext->IASetVertexBuffers(0, 1, _vertexBuffer->GetComPtr().GetAddressOf(), &stride, &offset);
+		_deviceContext->IASetVertexBuffers(0, 1, _vertexBuffer->GetComPtr().GetAddressOf(), &stride, &offset); 
 		_deviceContext->IASetIndexBuffer(_indexBuffer->GetComPtr().Get(), DXGI_FORMAT_R32_UINT, 0);
 		_deviceContext->IASetInputLayout(_inputLayout->GetComPtr().Get());
 		_deviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -81,8 +82,8 @@ void Game::Render()
 
 		// PS
 		_deviceContext->PSSetShader(_pixelShader.Get(), nullptr, 0);
-		_deviceContext->PSSetShaderResources(0, 1, _shaderResourceView.GetAddressOf());
-		_deviceContext->PSSetShaderResources(1, 1, _shaderResourceView2.GetAddressOf());
+		_deviceContext->PSSetShaderResources(0, 1, _shaderResourveView.GetAddressOf());
+		_deviceContext->PSSetShaderResources(1, 1, _shaderResourveView2.GetAddressOf());
 		_deviceContext->PSSetSamplers(0, 1, _samplerState.GetAddressOf());
 
 		// OM
@@ -90,8 +91,7 @@ void Game::Render()
 
 		//_deviceContext->Draw(_vertices.size(), 0);
 		_deviceContext->DrawIndexed(_geometry->GetIndexCount(), 0, 0);
-		
-	}	
+	}
 
 	_graphics->RenderEnd();
 }
@@ -100,14 +100,13 @@ void Game::CreateGeometry()
 {
 	// VertexData
 	GeometryHelper::CreateRectangle(_geometry);
-
+	
 	// VertexBuffer
 	_vertexBuffer->Create(_geometry->GetVertices());
 
-	// indexBuffer
+	// IndexBuffer
 	_indexBuffer->Create(_geometry->GetIndices());
 }
-
 
 void Game::CreateInputLayout()
 {
@@ -117,9 +116,8 @@ void Game::CreateInputLayout()
 void Game::CreateVS()
 {
 	LoadShaderFromFile(L"Default.hlsl", "VS", "vs_5_0", _vsBlob);
-	HRESULT hr = _graphics->GetDevice()->CreateVertexShader(_vsBlob->GetBufferPointer(), _vsBlob->GetBufferSize(), nullptr, _vertexShader.GetAddressOf());
+ 	HRESULT hr = _graphics->GetDevice()->CreateVertexShader(_vsBlob->GetBufferPointer(), _vsBlob->GetBufferSize(), nullptr, _vertexShader.GetAddressOf());
 	CHECK(hr);
-
 }
 
 void Game::CreatePS()
@@ -137,7 +135,7 @@ void Game::CreateRasterizerState()
 	desc.CullMode = D3D11_CULL_BACK;
 	desc.FrontCounterClockwise = false;
 
-	HRESULT hr = _graphics->GetDevice()->CreateRasterizerState(&desc, _rasterizerState.GetAddressOf());;
+	HRESULT hr = _graphics->GetDevice()->CreateRasterizerState(&desc, _rasterizerState.GetAddressOf());
 	CHECK(hr);
 }
 
@@ -158,9 +156,6 @@ void Game::CreateSamplerState()
 	desc.MaxLOD = FLT_MAX;
 	desc.MinLOD = FLT_MIN;
 	desc.MipLODBias = 0.0f;
-
-
-
 
 	_graphics->GetDevice()->CreateSamplerState(&desc, _samplerState.GetAddressOf());
 }
@@ -192,13 +187,13 @@ void Game::CreateSRV()
 	HRESULT hr = ::LoadFromWICFile(L"Skeleton.png", WIC_FLAGS_NONE, &md, img);
 	CHECK(hr);
 
-	hr = ::CreateShaderResourceView(_graphics->GetDevice().Get(), img.GetImages(), img.GetImageCount(), md, _shaderResourceView.GetAddressOf());
+	hr = ::CreateShaderResourceView(_graphics->GetDevice().Get(), img.GetImages(), img.GetImageCount(), md, _shaderResourveView.GetAddressOf());
 	CHECK(hr);
 
 	hr = ::LoadFromWICFile(L"Golem.png", WIC_FLAGS_NONE, &md, img);
 	CHECK(hr);
 
-	hr = ::CreateShaderResourceView(_graphics->GetDevice().Get(), img.GetImages(), img.GetImageCount(), md, _shaderResourceView2.GetAddressOf());
+	hr = ::CreateShaderResourceView(_graphics->GetDevice().Get(), img.GetImages(), img.GetImageCount(), md, _shaderResourveView2.GetAddressOf());
 	CHECK(hr);
 }
 

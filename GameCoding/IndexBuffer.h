@@ -13,7 +13,6 @@ public:
 
 	void Create(const vector<uint32>& indices);
 
-
 private:
 	ComPtr<ID3D11Device> _device;
 	ComPtr<ID3D11Buffer> _indexBuffer;

@@ -10,57 +10,57 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="소스 파일\99. Headers">
-      <UniqueIdentifier>{e9543c6c-5e01-47f7-9789-70253eb227c7}</UniqueIdentifier>
+      <UniqueIdentifier>{ba2e96f3-c76b-4822-a752-a6d9197fd0bc}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\01. Main">
-      <UniqueIdentifier>{51aa4490-631e-4a3c-a4db-5c6b5364893b}</UniqueIdentifier>
+      <UniqueIdentifier>{bd57b81e-82bd-435b-abea-b215191eaa49}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\99. Headers\Andromeda">
-      <UniqueIdentifier>{5ec91003-15f8-44cb-ac90-b15ce69642ad}</UniqueIdentifier>
+      <UniqueIdentifier>{694fd2b7-6b98-4c2d-b89c-e416ceec34c1}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\98. Shaders">
-      <UniqueIdentifier>{a272810b-9cc2-4008-8c30-1c374cf9e223}</UniqueIdentifier>
+      <UniqueIdentifier>{7a9ab2b2-4c61-411e-93a1-113cc3d7e49b}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\99. Headers\Utils">
-      <UniqueIdentifier>{b67a595d-7866-4ea4-8417-4152e72f986e}</UniqueIdentifier>
+      <UniqueIdentifier>{d4cf98f4-0911-4631-a446-dfa97d270686}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine">
-      <UniqueIdentifier>{1bcdcf3e-a74b-4b5a-a60d-9f29accaeff2}</UniqueIdentifier>
+      <UniqueIdentifier>{ddc71f40-a0a2-46e3-8cb4-d52d665740d1}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Pipeline">
-      <UniqueIdentifier>{24b25f93-205a-4179-8434-f71d1648ac0f}</UniqueIdentifier>
+      <UniqueIdentifier>{f73d4060-5018-4528-a0a8-d352d298bcab}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Pipeline\00. Geometry">
-      <UniqueIdentifier>{c5957ff2-b206-4caf-ba57-bd6cb0947db4}</UniqueIdentifier>
+      <UniqueIdentifier>{a706708f-893c-4cc3-8a95-8a9e7cc68702}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Pipeline\01. InputAssembler">
-      <UniqueIdentifier>{63b4b3eb-2e86-4b71-b484-b8fab8fbc269}</UniqueIdentifier>
+      <UniqueIdentifier>{26c7fcb5-09d4-4da1-af7c-9c01c663f1a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00. Engine\Pipeline\02. VertexShader">
+      <UniqueIdentifier>{13be1071-e92b-4ee2-8012-39288129aa3b}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Pipeline\03. Rasterizer">
-      <UniqueIdentifier>{34e6f549-b19e-4ce5-941c-c1773bc8f428}</UniqueIdentifier>
+      <UniqueIdentifier>{3d364547-33dd-4ed4-bae1-123844520e5f}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Pipeline\04. PixelShader">
-      <UniqueIdentifier>{615742a8-5289-4086-bed4-8f111037db1c}</UniqueIdentifier>
+      <UniqueIdentifier>{28bdb155-042b-4acf-b7d0-5b011060676b}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Pipeline\05. OutputMerger">
-      <UniqueIdentifier>{e56c7490-5bba-47f9-82e6-daddd168aa8d}</UniqueIdentifier>
+      <UniqueIdentifier>{51ca6ae4-82ed-4800-b5a0-c3a72b8f5331}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>소스 파일\99. Headers</Filter>
     </ClInclude>
-    <ClInclude Include="framework.h">
+    <ClInclude Include="targetver.h">
       <Filter>소스 파일\99. Headers\Andromeda</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>소스 파일\99. Headers\Andromeda</Filter>
     </ClInclude>
-    <ClInclude Include="targetver.h">
+    <ClInclude Include="framework.h">
       <Filter>소스 파일\99. Headers\Andromeda</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCoding.h">
-      <Filter>소스 파일\01. Main</Filter>
     </ClInclude>
     <ClInclude Include="Values.h">
       <Filter>소스 파일\99. Headers</Filter>
@@ -72,6 +72,9 @@
       <Filter>소스 파일\99. Headers</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
+      <Filter>소스 파일\01. Main</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCoding.h">
       <Filter>소스 파일\01. Main</Filter>
     </ClInclude>
     <ClInclude Include="SimpleMath.h">
@@ -113,13 +116,13 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameCoding.cpp">
-      <Filter>소스 파일\01. Main</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일\99. Headers</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
+      <Filter>소스 파일\01. Main</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCoding.cpp">
       <Filter>소스 파일\01. Main</Filter>
     </ClCompile>
     <ClCompile Include="SimpleMath.cpp">
