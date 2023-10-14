@@ -36,8 +36,7 @@ VS_OUTPUT VS(VS_INPUT input)
 	return output;
 }
 
-Texture2D texture0 : register(t0);
-Texture2D texture1 : register(t1);
+Texture2D texture0 : register(t0); 
 SamplerState sampler0 : register(s0);
 
 float4 PS(VS_OUTPUT input) : SV_Target
