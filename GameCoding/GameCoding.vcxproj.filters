@@ -49,10 +49,10 @@
       <UniqueIdentifier>{51ca6ae4-82ed-4800-b5a0-c3a72b8f5331}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\GameObject">
-      <UniqueIdentifier>{34f8a806-9265-46f4-a710-e7fa77e74c0f}</UniqueIdentifier>
+      <UniqueIdentifier>{13d92d81-739e-43b7-8a74-74ab7983b3ba}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Component">
-      <UniqueIdentifier>{5bc58bcc-a89a-4e02-83ea-188dd0254e1f}</UniqueIdentifier>
+      <UniqueIdentifier>{87ae80a9-2e68-4e17-9e84-9713816835a0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

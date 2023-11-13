@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "Shader.h"
 
-Shader::Shader(ComPtr<ID3D11Device> device)
+Shader::Shader(ComPtr<ID3D11Device> device) 
 	: _device(device)
 {
 
@@ -35,10 +35,12 @@ void Shader::LoadShaderFromFile(const wstring& path, const string& name, const s
 
 VertexShader::VertexShader(ComPtr<ID3D11Device> device) : Super(device)
 {
+
 }
 
 VertexShader::~VertexShader()
 {
+
 }
 
 void VertexShader::Create(const wstring& path, const string& name, const string& version)
@@ -50,10 +52,12 @@ void VertexShader::Create(const wstring& path, const string& name, const string&
 
 PixelShader::PixelShader(ComPtr<ID3D11Device> device) : Super(device)
 {
+
 }
 
 PixelShader::~PixelShader()
 {
+
 }
 
 void PixelShader::Create(const wstring& path, const string& name, const string& version)

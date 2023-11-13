@@ -35,4 +35,3 @@ void Game::Render()
 
 	_graphics->RenderEnd();
 }
-

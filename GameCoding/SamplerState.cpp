@@ -3,10 +3,12 @@
 
 SamplerState::SamplerState(ComPtr<ID3D11Device> device) : _device(device)
 {
+
 }
 
 SamplerState::~SamplerState()
 {
+
 }
 
 void SamplerState::Create()

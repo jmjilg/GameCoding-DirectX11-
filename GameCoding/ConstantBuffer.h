@@ -9,6 +9,7 @@ public:
 	{
 
 	}
+
 	~ConstantBuffer() { }
 
 	ComPtr<ID3D11Buffer> GetComPtr() { return _constantBuffer; }
@@ -41,4 +42,3 @@ private:
 	ComPtr<ID3D11DeviceContext> _deviceContext;
 	ComPtr<ID3D11Buffer> _constantBuffer;
 };
-

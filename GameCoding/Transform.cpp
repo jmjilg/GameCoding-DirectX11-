@@ -8,6 +8,7 @@ Transform::Transform()
 
 Transform::~Transform()
 {
+
 }
 
 void Transform::Init()
@@ -15,10 +16,11 @@ void Transform::Init()
 }
 
 void Transform::Update()
-{	
+{
 }
 
-Vec3 ToEulerAngles(Quaternion q) {
+Vec3 ToEulerAngles(Quaternion q)
+{
 	Vec3 angles;
 
 	// roll (x-axis rotation)
@@ -62,8 +64,6 @@ void Transform::UpdateTransform()
 	_matWorld.Decompose(_scale, quat, _position);
 	_rotation = ToEulerAngles(quat);
 
-	// TransformCoord
-	// TransformNormal
 	_right = Vec3::TransformNormal(Vec3::Right, _matWorld);
 	_up = Vec3::TransformNormal(Vec3::Up, _matWorld);
 	_look = Vec3::TransformNormal(Vec3::Backward, _matWorld);
@@ -86,7 +86,7 @@ void Transform::SetScale(const Vec3& worldScale)
 	}
 	else
 	{
-		SetLocalRotation(worldScale);
+		SetLocalScale(worldScale);
 	}
 }
 
@@ -96,23 +96,21 @@ void Transform::SetRotation(const Vec3& worldRotation)
 	{
 		Matrix inverseMatrix = _parent->GetWorldMatrix().Invert();
 
-		Vec3 position;
-		position.Transform(worldRotation, inverseMatrix);
+		Vec3 rotation;
+		rotation.TransformNormal(worldRotation, inverseMatrix);
 
-		SetLocalPosition(position);
+		SetLocalRotation(rotation);
 	}
 	else
-	{
-		SetLocalPosition(worldRotation);
-	}
+		SetLocalRotation(worldRotation);
 }
 
 void Transform::SetPosition(const Vec3& worldPosition)
 {
 	if (HasParent())
 	{
-		Matrix worldToParentLocalMatrix =  _parent->GetWorldMatrix().Invert();
-		
+		Matrix worldToParentLocalMatrix = _parent->GetWorldMatrix().Invert();
+
 		Vec3 position;
 		position.Transform(worldPosition, worldToParentLocalMatrix);
 

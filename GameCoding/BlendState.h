@@ -1,4 +1,5 @@
 #pragma once
+
 class BlendState
 {
 public:
@@ -6,8 +7,8 @@ public:
 	~BlendState();
 
 	const float* GetBlendFactor() { return &_blendFactor; }
-	uint32 GetSampleMask() { return _samplerMask; }
-	ComPtr<ID3D11BlendState> GetComptr() { return _blendState; }
+	uint32 GetSampleMask() { return _sampleMask; }
+	ComPtr<ID3D11BlendState> GetComPtr() { return _blendState; }
 
 	void Create(D3D11_RENDER_TARGET_BLEND_DESC blendDesc =
 		{
@@ -20,10 +21,12 @@ public:
 			D3D11_BLEND_OP_ADD,
 			D3D11_COLOR_WRITE_ENABLE_ALL
 		}, float factor = 0.f);
+
+
 private:
 	ComPtr<ID3D11Device> _device;
 	ComPtr<ID3D11BlendState> _blendState;
 	float _blendFactor = 0.f;
-	uint32 _samplerMask = 0xFFFFFFFF;
+	uint32 _sampleMask = 0xFFFFFFFF;
 };
 

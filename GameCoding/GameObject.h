@@ -12,8 +12,7 @@ public:
 private:
 	ComPtr<ID3D11Device> _device;
 
-	//shared_ptr<Geometry<VertexTextureData>> _geometry;
-	shared_ptr<Geometry<VertexColorData>> _geometry;
+	shared_ptr<Geometry<VertexTextureData>> _geometry;
 	shared_ptr<VertexBuffer> _vertexBuffer;
 	shared_ptr<IndexBuffer> _indexBuffer;
 	shared_ptr<InputLayout> _inputLayout;
