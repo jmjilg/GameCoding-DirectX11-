@@ -55,13 +55,13 @@
       <UniqueIdentifier>{87ae80a9-2e68-4e17-9e84-9713816835a0}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Component\Animation">
-      <UniqueIdentifier>{75ec28e4-e9c8-427e-9882-05023b78e0f7}</UniqueIdentifier>
+      <UniqueIdentifier>{4a4d7460-8edd-426b-baad-e818a41f0126}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Component\Camera">
-      <UniqueIdentifier>{4f05b8c5-f62c-4e41-9ee1-db86edc55f78}</UniqueIdentifier>
+      <UniqueIdentifier>{bac7e508-fa1e-4cfb-ac61-369f4ad372aa}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Component\Rendering">
-      <UniqueIdentifier>{08c1f04c-dbfb-49b9-8609-5235614c7ad7}</UniqueIdentifier>
+      <UniqueIdentifier>{b952e5aa-a29e-42ea-b312-f10ead3abe37}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

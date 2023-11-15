@@ -34,6 +34,7 @@ public:
 
 public:
 	ComponentType GetType() { return _type; }
+
 	shared_ptr<GameObject> GetGameObject();
 	shared_ptr<Transform> GetTransform();
 

@@ -3,6 +3,7 @@
 #include "MonoBehaviour.h"
 #include "Transform.h"
 
+
 GameObject::GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext)
 	: _device(device)
 {
@@ -38,7 +39,6 @@ GameObject::GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> 
 	
 	_samplerState = make_shared<SamplerState>(device);
 	_samplerState->Create();
-
 }
 
 GameObject::~GameObject()
@@ -54,9 +54,9 @@ void GameObject::Awake()
 			component->Awake();
 	}
 
-	for (shared_ptr<MonoBehaviour>& scripts : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
-		scripts->Awake();
+		script->Awake();
 	}
 }
 
@@ -68,9 +68,9 @@ void GameObject::Start()
 			component->Start();
 	}
 
-	for (shared_ptr<MonoBehaviour>& scripts : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
-		scripts->Start();
+		script->Start();
 	}
 }
 
@@ -82,9 +82,9 @@ void GameObject::Update()
 			component->Update();
 	}
 
-	for (shared_ptr<MonoBehaviour>& scripts : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
-		scripts->Update();
+		script->Update();
 	}
 
 	_transformData.matWorld = GetOrAddTransform()->GetWorldMatrix();
@@ -95,12 +95,13 @@ void GameObject::LateUpdate()
 {
 	for (shared_ptr<Component>& component : _components)
 	{
-		component->LateUpdate();
+		if (component)
+			component->LateUpdate();
 	}
 
-	for (shared_ptr<MonoBehaviour>& scripts : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
-		scripts->LateUpdate();
+		script->LateUpdate();
 	}
 }
 
@@ -111,26 +112,26 @@ void GameObject::FixedUpdate()
 		component->FixedUpdate();
 	}
 
-	for (shared_ptr<MonoBehaviour>& scripts : _scripts)
+	for (shared_ptr<MonoBehaviour>& script : _scripts)
 	{
-		scripts->FixedUpdate();
+		script->FixedUpdate();
 	}
 }
 
-shared_ptr<Component> GameObject::GetFixedComponent(ComponentType type)
+std::shared_ptr<Component> GameObject::GetFixedComponent(ComponentType type)
 {
 	uint8 index = static_cast<uint8>(type);
 	assert(index < FIXED_COMPONENT_COUNT);
 	return _components[index];
 }
 
-shared_ptr<Transform> GameObject::GetTransform()
+std::shared_ptr<Transform> GameObject::GetTransform()
 {
 	shared_ptr<Component> component = GetFixedComponent(ComponentType::Transform);
 	return static_pointer_cast<Transform>(component);
 }
 
-shared_ptr<Transform> GameObject::GetOrAddTransform()
+std::shared_ptr<Transform> GameObject::GetOrAddTransform()
 {
 	if (GetTransform() == nullptr)
 	{
@@ -145,7 +146,7 @@ void GameObject::AddComponent(shared_ptr<Component> component)
 {
 	component->SetGameObject(shared_from_this());
 
-	uint8 index = static_cast<int8>(component->GetType());
+	uint8 index = static_cast<uint8>(component->GetType());
 	if (index < FIXED_COMPONENT_COUNT)
 	{
 		_components[index] = component;

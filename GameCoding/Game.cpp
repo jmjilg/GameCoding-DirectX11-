@@ -22,7 +22,7 @@ void Game::Init(HWND hwnd)
 	_monster = make_shared<GameObject>(_graphics->GetDevice(), _graphics->GetDeviceContext());
 	{
 		_monster->GetOrAddTransform();
-		//
+		// ..
 	}
 
 	_camera = make_shared<GameObject>(_graphics->GetDevice(), _graphics->GetDeviceContext());

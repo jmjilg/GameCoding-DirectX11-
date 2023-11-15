@@ -8,17 +8,19 @@ public:
 	GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext);
 	~GameObject();
 
-	virtual void Awake();
-	virtual void Start();
-	virtual void Update();
-	virtual void LateUpdate(); 
-	virtual void FixedUpdate();
+	void Awake();
+	void Start();
+	void Update();
+	void LateUpdate();
+	void FixedUpdate();
 
 	shared_ptr<Component> GetFixedComponent(ComponentType type);
 	shared_ptr<Transform> GetTransform();
 
 	shared_ptr<Transform> GetOrAddTransform();
 	void AddComponent(shared_ptr<Component> component);
+
+	// ..
 
 	void Render(shared_ptr<Pipeline> pipeline);
 
