@@ -63,6 +63,18 @@
     <Filter Include="소스 파일\00. Engine\Component\Rendering">
       <UniqueIdentifier>{b952e5aa-a29e-42ea-b312-f10ead3abe37}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\00. Engine\Manager">
+      <UniqueIdentifier>{c3107fda-841b-4ea8-b10a-4ee5e63c1d30}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00. Engine\Manager\Input">
+      <UniqueIdentifier>{46b7afce-d335-4c0f-855c-8ddc8f91faef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00. Engine\Manager\Scene">
+      <UniqueIdentifier>{12491219-71de-4076-84b6-3a591f037bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\00. Engine\Manager\Time">
+      <UniqueIdentifier>{78daeff6-bf3c-4eb7-be8e-d8fde2aadd0a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -155,6 +167,12 @@
     <ClInclude Include="MeshRenderer.h">
       <Filter>소스 파일\00. Engine\Component\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>소스 파일\00. Engine\Manager\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>소스 파일\00. Engine\Manager\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="GameCoding.rc">
@@ -241,6 +259,12 @@
     </ClCompile>
     <ClCompile Include="MeshRenderer.cpp">
       <Filter>소스 파일\00. Engine\Component\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>소스 파일\00. Engine\Manager\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>소스 파일\00. Engine\Manager\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
