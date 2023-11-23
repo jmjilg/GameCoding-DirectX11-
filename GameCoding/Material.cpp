@@ -3,8 +3,10 @@
 
 Material::Material() : Super(ResourceType::Material)
 {
+
 }
 
 Material::~Material()
 {
+
 }

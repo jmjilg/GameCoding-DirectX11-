@@ -34,8 +34,8 @@ MeshRenderer::MeshRenderer(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceConte
 	_cameraBuffer = make_shared<ConstantBuffer<CameraData>>(device, deviceContext);
 	_cameraBuffer->Create();
 
-	_trasnformBuffer = make_shared<ConstantBuffer<TransformData>>(device, deviceContext);
-	_trasnformBuffer->Create();
+	_transformBuffer = make_shared<ConstantBuffer<TransformData>>(device, deviceContext);
+	_transformBuffer->Create();
 
 	_texture1 = make_shared<Texture>(device);
 	_texture1->Create(L"Skeleton.png");
@@ -46,20 +46,22 @@ MeshRenderer::MeshRenderer(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceConte
 
 MeshRenderer::~MeshRenderer()
 {
+
 }
 
 void MeshRenderer::Update()
 {
-	_cameramData.matView = Camera::S_MatView;
-	//_cameramData.matView = Matrix::Identity;
-	_cameramData.matProjection = Camera::S_MatProjection;
-	//_cameramData.matProjection = Matrix::Identity;
-	_cameraBuffer->CopyData(_cameramData);
+	_cameraData.matView = Camera::S_MatView;
+	//_cameraData.matView = Matrix::Identity;
+	_cameraData.matProjection = Camera::S_MatProjection;
+	//_cameraData.matProjection = Matrix::Identity;
+	_cameraBuffer->CopyData(_cameraData);
 
 	_transformData.matWorld = GetTransform()->GetWorldMatrix();
-	_trasnformBuffer->CopyData(_transformData);
+	_transformBuffer->CopyData(_transformData);
 
 	// Render
+	
 	Render(GGame->GetPipeline());
 }
 
@@ -77,7 +79,7 @@ void MeshRenderer::Render(shared_ptr<Pipeline> pipeline)
 	pipeline->SetIndexBuffer(_indexBuffer);
 
 	pipeline->SetConstantBuffer(0, SS_VertexShader, _cameraBuffer);
-	pipeline->SetConstantBuffer(1, SS_VertexShader, _trasnformBuffer);
+	pipeline->SetConstantBuffer(1, SS_VertexShader, _transformBuffer);
 
 	pipeline->SetTexture(0, SS_PixelShader, _texture1);
 	pipeline->SetSamplerState(0, SS_PixelShader, _samplerState);

@@ -43,7 +43,8 @@ private:
 };
 
 template<typename T>
-shared_ptr<T> ResourceManager::Load(const wstring& key, const wstring& path)
+shared_ptr<T>
+ResourceManager::Load(const wstring& key, const wstring& path)
 {
 	auto objectType = GetResourceType<T>();
 	KeyObjMap& keyObjMap = _resources[static_cast<uint8>(objectType)];
@@ -56,7 +57,7 @@ shared_ptr<T> ResourceManager::Load(const wstring& key, const wstring& path)
 	object->Load(path);
 	keyObjMap[key] = object;
 
-	return true;
+	return object;
 }
 
 template<typename T>
@@ -70,7 +71,6 @@ bool ResourceManager::Add(const wstring& key, shared_ptr<T> object)
 		return false;
 
 	keyObjMap[key] = object;
-
 	return true;
 }
 
@@ -104,3 +104,4 @@ ResourceType ResourceManager::GetResourceType()
 	assert(false);
 	return ResourceType::None;
 }
+

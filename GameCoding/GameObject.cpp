@@ -9,6 +9,7 @@
 GameObject::GameObject(ComPtr<ID3D11Device> device, ComPtr<ID3D11DeviceContext> deviceContext)
 	: _device(device)
 {
+	
 }
 
 GameObject::~GameObject()
@@ -99,14 +100,13 @@ std::shared_ptr<Transform> GameObject::GetTransform()
 	return static_pointer_cast<Transform>(component);
 }
 
-shared_ptr<Camera> GameObject::GetCamera()
+std::shared_ptr<Camera> GameObject::GetCamera()
 {
 	shared_ptr<Component> component = GetFixedComponent(ComponentType::Camera);
 	return static_pointer_cast<Camera>(component);
-
 }
 
-shared_ptr<MeshRenderer> GameObject::GetMeshRenderer()
+std::shared_ptr<MeshRenderer> GameObject::GetMeshRenderer()
 {
 	shared_ptr<Component> component = GetFixedComponent(ComponentType::MeshRenderer);
 	return static_pointer_cast<MeshRenderer>(component);

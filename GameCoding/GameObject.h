@@ -25,7 +25,6 @@ public:
 	shared_ptr<Transform> GetOrAddTransform();
 	void AddComponent(shared_ptr<Component> component);
 
-
 private:
 	ComPtr<ID3D11Device> _device;
 

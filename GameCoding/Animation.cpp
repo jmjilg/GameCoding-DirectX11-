@@ -3,8 +3,10 @@
 
 Animation::Animation() : Super(ResourceType::Animation)
 {
+
 }
 
 Animation::~Animation()
 {
+
 }

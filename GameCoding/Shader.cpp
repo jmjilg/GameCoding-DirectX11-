@@ -3,8 +3,10 @@
 
 Shader::Shader() : Super(ResourceType::Shader)
 {
+
 }
 
 Shader::~Shader()
 {
+
 }

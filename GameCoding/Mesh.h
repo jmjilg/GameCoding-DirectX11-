@@ -3,9 +3,12 @@
 
 class Mesh : public ResourceBase
 {
-	using Super = ResourceBase;
+    using Super = ResourceBase;
+
 public:
-	Mesh();
-	virtual ~Mesh();
+    Mesh();
+    virtual ~Mesh();
+
+
 };
 

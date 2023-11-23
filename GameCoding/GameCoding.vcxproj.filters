@@ -64,22 +64,22 @@
       <UniqueIdentifier>{b952e5aa-a29e-42ea-b312-f10ead3abe37}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Manager">
-      <UniqueIdentifier>{c3107fda-841b-4ea8-b10a-4ee5e63c1d30}</UniqueIdentifier>
+      <UniqueIdentifier>{0fdbfaa4-8e02-4fdd-94a8-7beb3d445d21}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Manager\Input">
-      <UniqueIdentifier>{46b7afce-d335-4c0f-855c-8ddc8f91faef}</UniqueIdentifier>
+      <UniqueIdentifier>{3682311a-6a1d-456d-9b5f-e1e2dd87c078}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Manager\Scene">
-      <UniqueIdentifier>{12491219-71de-4076-84b6-3a591f037bb1}</UniqueIdentifier>
+      <UniqueIdentifier>{3de921e9-7fc2-4c4e-abdc-be740256a41f}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Manager\Time">
-      <UniqueIdentifier>{78daeff6-bf3c-4eb7-be8e-d8fde2aadd0a}</UniqueIdentifier>
+      <UniqueIdentifier>{d7b2936c-84b3-4327-b501-3bad56e71804}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Manager\Resource">
-      <UniqueIdentifier>{de4069d6-4b16-4d9f-9ff0-f76023775062}</UniqueIdentifier>
+      <UniqueIdentifier>{84c46ff5-fea5-4cad-adf4-a56f3e2288e8}</UniqueIdentifier>
     </Filter>
     <Filter Include="소스 파일\00. Engine\Resource">
-      <UniqueIdentifier>{54e1571a-8ce9-4b49-b7f8-7cece025d046}</UniqueIdentifier>
+      <UniqueIdentifier>{8cc13f7f-48db-4ba5-b7d2-5f19cf341eb1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -333,6 +333,5 @@
     <None Include="SimpleMath.inl">
       <Filter>소스 파일\99. Headers\Utils</Filter>
     </None>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

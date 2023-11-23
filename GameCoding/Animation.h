@@ -4,8 +4,10 @@
 class Animation : public ResourceBase
 {
 	using Super = ResourceBase;
+
 public:
 	Animation();
 	virtual ~Animation();
+
 };
 

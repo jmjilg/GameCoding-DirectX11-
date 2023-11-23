@@ -5,6 +5,7 @@
 ResourceManager::ResourceManager(ComPtr<ID3D11Device> device)
 	: _device(device)
 {
+
 }
 
 void ResourceManager::Init()
@@ -24,20 +25,25 @@ void ResourceManager::CreateDefaultTexture()
 		texture->Create(L"Skeleton.png");
 		Add(texture->GetName(), texture);
 	}
+	
 }
 
 void ResourceManager::CreateDefaultMesh()
 {
+
 }
 
 void ResourceManager::CreateDefaultShader()
 {
+
 }
 
 void ResourceManager::CreateDefaultMaterial()
 {
+
 }
 
 void ResourceManager::CreateDefaultAnimation()
 {
+
 }

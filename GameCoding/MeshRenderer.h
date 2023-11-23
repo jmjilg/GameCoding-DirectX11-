@@ -12,7 +12,7 @@ public:
 
 private:
 	void Render(shared_ptr<Pipeline> pipeline);
- 
+
 private:
 	ComPtr<ID3D11Device> _device;
 
@@ -33,12 +33,11 @@ private:
 
 private:
 	// Camera
-	CameraData _cameramData;
+	CameraData _cameraData;
 	shared_ptr<ConstantBuffer<CameraData>> _cameraBuffer;
 
 	// SRT
 	TransformData _transformData;
-	shared_ptr<ConstantBuffer<TransformData>> _trasnformBuffer;
-
+	shared_ptr<ConstantBuffer<TransformData>> _transformBuffer;
 };
 

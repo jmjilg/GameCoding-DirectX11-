@@ -7,5 +7,7 @@ class Shader : public ResourceBase
 public:
 	Shader();
 	virtual ~Shader();
+
+
 };
 

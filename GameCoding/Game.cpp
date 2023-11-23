@@ -11,7 +11,7 @@ unique_ptr<Game> GGame = make_unique<Game>();
 
 Game::Game()
 {
-
+	
 }
 
 Game::~Game()
@@ -51,4 +51,7 @@ void Game::Update()
 
 void Game::Render()
 {
+	
+
+	
 }

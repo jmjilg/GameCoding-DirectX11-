@@ -9,6 +9,7 @@
 SceneManager::SceneManager(shared_ptr<Graphics> graphics)
 	: _graphics(graphics)
 {
+
 }
 
 void SceneManager::Init()
@@ -26,9 +27,9 @@ void SceneManager::Update()
 		return;
 
 	_activeScene->Update();
-	_activeScene->LateUpdate();
-
-	_activeScene->FixedUpdate();
+	_activeScene->LateUpdate(); 
+	
+	_activeScene->FixedUpdate();	
 }
 
 void SceneManager::LoadScene(wstring sceneName)
@@ -37,17 +38,15 @@ void SceneManager::LoadScene(wstring sceneName)
 
 	_activeScene = LoadTestScene();
 	Init();
-
 }
 
-shared_ptr<Scene> SceneManager::LoadTestScene()
+std::shared_ptr<Scene> SceneManager::LoadTestScene()
 {
 	shared_ptr<Scene> scene = make_shared<Scene>();
 
-
+	
 	// Camera
 	{
-
 		shared_ptr<GameObject> camera = make_shared<GameObject>(_graphics->GetDevice(), _graphics->GetDeviceContext());
 		{
 			camera->GetOrAddTransform();
@@ -55,7 +54,7 @@ shared_ptr<Scene> SceneManager::LoadTestScene()
 			scene->AddGameObject(camera);
 		}
 	}
-
+	
 	// Monster
 	{
 		shared_ptr<GameObject> monster = make_shared<GameObject>(_graphics->GetDevice(), _graphics->GetDeviceContext());
