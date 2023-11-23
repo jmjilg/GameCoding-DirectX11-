@@ -76,7 +76,8 @@ void GameObject::FixedUpdate()
 {
 	for (shared_ptr<Component>& component : _components)
 	{
-		component->FixedUpdate();
+		if (component)
+			component->FixedUpdate();
 	}
 
 	for (shared_ptr<MonoBehaviour>& script : _scripts)
